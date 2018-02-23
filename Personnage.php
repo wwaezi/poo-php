@@ -9,11 +9,19 @@ class Personnage
     private $_degats;
     private $_prenom;
 
+    private static $_texteADire = "Je vais tous vous tuer !";
+
+    /*******CONSTANTES***********/
+
+    const FORCE_PETITE  = 20;
+    const FORCE_MOYENNE = 50;
+    const FORCE_GRANDE  = 80;
+    
     /*******CONSTRUCTEUR***********/
 
-    public function __construct($force = null, $degats = null, $experience = null, $prenom = null)
+    public function __construct($forceInitiale = self::FORCE_PETITE, $degats = null, $experience = null, $prenom = null)
     {
-        $this->setForce($force);
+        $this->setForce($forceInitiale);
         $this->setDegats($degats);
         $this->setExperience($experience);
         $this->setPrenom($prenom);
@@ -26,9 +34,9 @@ class Personnage
         $this->_experience++;
     }
 
-    public function parler()
+    public static function parler()
     {
-        echo "\n\nJe suis un personnage, nom est ".$this->_prenom." !\n\n";
+        echo "\n\n".self::$_texteADire."\n\n";
     }
 
     public function frapper(Personnage $persoAFrapper)
@@ -93,22 +101,14 @@ class Personnage
         $this->_prenom= $prenom;
     }
 
-    public function setForce($force = 0)
+    public function setForce($force = self::FORCE_PETITE)
     {
-        if ($force == null)
-            $force = 0;
-
-        if (!is_int($force)) {
-            trigger_error("La force d'un personnage doit être un nombre entier.", E_USER_WARNING);
+        if (in_array($force, [self::FORCE_PETITE, self::FORCE_MOYENNE, self::FORCE_GRANDE]))
+            $this->_force= $force;
+        else {
+            trigger_error("Valeur de force invalide", E_USER_WARNING);
             return;
         }
-
-        if ($force > 100) {
-            trigger_error("La force d'un personnage ne peut dépasser 100.", E_USER_WARNING);
-            return;
-        }
-
-        $this->_force= $force;
     }
 
     public function setExperience($experience = 0)

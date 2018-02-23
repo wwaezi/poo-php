@@ -7,7 +7,7 @@ function chargerClasse($classe)
 
 spl_autoload_register('chargerClasse'); // On enregistre la fonction en autoload pour qu'elle soit appelée dès qu'on instanciera une classe non déclarée.
 
-$perso1 = new Personnage(5,null,0,'Perso 1');
+$perso1 = new Personnage(Personnage::FORCE_MOYENNE,null,0,'Perso 1');
 $perso1->parler();
 echo "Experience: ".$perso1->getExperience()."\n";
 echo "Force     : ".$perso1->getForce()."\n";
@@ -15,7 +15,7 @@ echo "Degats    : ".$perso1->getDegats()."\n\n";
 
 echo "--------------------------------------------";
 
-$perso2 = new Personnage(17,null,0,'Perso 2');
+$perso2 = new Personnage(Personnage::FORCE_GRANDE,null,0,'Perso 2');
 $perso2->parler();
 echo "Experience: ".$perso2->getExperience()."\n";
 echo "Force     : ".$perso2->getForce()."\n";
