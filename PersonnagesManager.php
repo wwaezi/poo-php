@@ -24,18 +24,25 @@ class PersonnagesManager
 
     	$q->execute();
 
-    	$perso->hydrate(['id' => $this->_db->lastInsertId(),'degats' => 0]);
+    	$perso->hydrate([
+    	    'id' => $this->_db->lastInsertId(),
+            'degats' => 0,
+            'niveau' => 1,
+            'experience' => 0,
+            'force' => 5,
+            'force' => NULL
+        ]);
     }
 
     public function get($info)
     {
     	if (is_numeric($info)) {
-            $q = $this->_db->query('SELECT id, nom, degats FROM personnagestp WHERE id = '.$info);
+            $q = $this->_db->query('SELECT id, nom, degats, niveau, experience, force FROM personnagestp WHERE id = '.$info);
             $donnees = $q->fetch(PDO::FETCH_ASSOC);
             return new PersonnageTp($donnees);
         }else
         {
-            $q = $this->_db->prepare('SELECT id, nom, degats FROM personnagestp WHERE nom = :nom');
+            $q = $this->_db->prepare('SELECT id, nom, degats, niveau, experience, force FROM personnagestp WHERE nom = :nom');
             $q->execute([':nom' => $info]);
             return new PersonnageTp($q->fetch(PDO::FETCH_ASSOC));
         }
@@ -45,7 +52,7 @@ class PersonnagesManager
     {
     	$persos = [];
 
-    	$q = $this->_db->prepare('SELECT id, nom, degats FROM personnagestp WHERE nom <> :nom ORDER BY nom');
+    	$q = $this->_db->prepare('SELECT id, nom, degats, niveau, experience, force FROM personnagestp WHERE nom <> :nom ORDER BY nom');
         $q->execute([':nom' => $nom]);
 
         while ($donnees = $q->fetch(PDO::FETCH_ASSOC)) {
@@ -57,10 +64,13 @@ class PersonnagesManager
 
     public function update(PersonnageTp $perso)
     {
-    	$q = $this->_db->prepare('UPDATE personnagestp SET degats = :degats WHERE id = :id');
+    	$q = $this->_db->prepare('UPDATE personnagestp SET degats = :degats, niveau = :niveau, experience = :experience, force = :force WHERE id = :id');
 
 	    $q->bindValue(':degats', $perso->getDegats(), PDO::PARAM_INT);
 	    $q->bindValue(':id', $perso->getId(), PDO::PARAM_INT);
+	    $q->bindValue(':niveau', $perso->getNiveau(), PDO::PARAM_INT);
+	    $q->bindValue(':experience', $perso->getExperience(), PDO::PARAM_INT);
+	    $q->bindValue(':force', $perso->getForce(), PDO::PARAM_INT);
 
 	    $q->execute();
     }
