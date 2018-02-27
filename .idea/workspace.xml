@@ -4,8 +4,6 @@
     <list default="true" id="93a6b6c1-9184-4271-bdcb-68f8a42b8c97" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/PersonnageTp.php" afterPath="$PROJECT_DIR$/PersonnageTp.php" />
-      <change beforePath="$PROJECT_DIR$/PersonnagesManager.php" afterPath="$PROJECT_DIR$/PersonnagesManager.php" />
-      <change beforePath="$PROJECT_DIR$/tpJeuCombat.php" afterPath="$PROJECT_DIR$/tpJeuCombat.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -16,43 +14,44 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="PersonnageTp.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/PersonnageTp.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="18" column="35" lean-forward="false" selection-start-line="18" selection-start-column="35" selection-end-line="18" selection-end-column="35" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="PersonnagesManager.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/PersonnagesManager.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-444">
-              <caret line="37" column="32" lean-forward="false" selection-start-line="37" selection-start-column="32" selection-end-line="37" selection-end-column="32" />
+            <state relative-caret-position="1547">
+              <caret line="109" column="98" lean-forward="true" selection-start-line="109" selection-start-column="98" selection-end-line="109" selection-end-column="98" />
               <folding>
-                <marker date="1519603900903" expanded="true" signature="317:403" ph="INSERT INTO personnagestp... " />
-                <marker date="1519603900903" expanded="true" signature="999:1038" ph="SELECT id, n... personnagestp" />
-                <marker date="1519603900903" expanded="true" signature="1204:1248" ph="SELECT id, n... personnagestp" />
-                <marker date="1519603900903" expanded="true" signature="1476:1534" ph="SELECT id, n... personnagestp" />
-                <marker date="1519603900903" expanded="true" signature="1817:2019" ph="UPDATE personnagestp... " />
-                <marker date="1519603900903" expanded="true" signature="2697:2734" ph="DELETE FROM personnagestp... " />
-                <marker date="1519603900903" expanded="true" signature="2831:2865" ph="SELECT COUNT... personnagestp" />
-                <marker date="1519603900903" expanded="true" signature="3006:3052" ph="SELECT COUNT... personnagestp" />
-                <marker date="1519603900903" expanded="true" signature="3114:3165" ph="SELECT COUNT... personnagestp" />
+                <marker date="1519730058291" expanded="true" signature="394:482" ph="INSERT INTO personnagestp... " />
+                <marker date="1519730058291" expanded="true" signature="1056:1095" ph="SELECT * FRO... personnagestp" />
+                <marker date="1519730058291" expanded="true" signature="1163:1207" ph="SELECT * FRO... personnagestp" />
+                <marker date="1519730058291" expanded="true" signature="1930:2066" ph="UPDATE personnagestp... " />
+                <marker date="1519730058291" expanded="true" signature="2560:2618" ph="SELECT * FRO... personnagestp" />
+                <marker date="1519730058291" expanded="true" signature="2901:3151" ph="UPDATE personnagestp... " />
+                <marker date="1519730058291" expanded="true" signature="3913:3950" ph="DELETE FROM personnagestp... " />
+                <marker date="1519730058291" expanded="true" signature="4047:4081" ph="SELECT COUNT... personnagestp" />
+                <marker date="1519730058291" expanded="true" signature="4222:4268" ph="SELECT COUNT... personnagestp" />
+                <marker date="1519730058291" expanded="true" signature="4330:4381" ph="SELECT COUNT... personnagestp" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="tpJeuCombat.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="PersonnageTp.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/PersonnageTp.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="646">
+              <caret line="59" column="53" lean-forward="false" selection-start-line="59" selection-start-column="53" selection-end-line="59" selection-end-column="53" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="tpJeuCombat.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tpJeuCombat.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1279">
-              <caret line="127" column="55" lean-forward="false" selection-start-line="127" selection-start-column="55" selection-end-line="127" selection-end-column="55" />
+            <state relative-caret-position="510">
+              <caret line="30" column="53" lean-forward="false" selection-start-line="30" selection-start-column="53" selection-end-line="30" selection-end-column="53" />
               <folding>
-                <marker date="1519602293786" expanded="true" signature="2990:3001" ph="..." />
+                <marker date="1519720396665" expanded="true" signature="2990:3001" ph="..." />
               </folding>
             </state>
           </provider>
@@ -115,8 +114,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -165,16 +164,24 @@
       <workItem from="1519545598360" duration="14134000" />
       <workItem from="1519579082415" duration="13666000" />
     </task>
+    <task id="LOCAL-00001" summary="Jeu de combat terminée">
+      <created>1519730460182</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1519730460182</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="47395000" />
+    <option name="totallyTimeSpent" value="57453000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1616" height="876" extended-state="7" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.165" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1375" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -186,12 +193,23 @@
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.165" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -200,6 +218,10 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Jeu de combat terminée" />
+    <option name="LAST_COMMIT_MESSAGE" value="Jeu de combat terminée" />
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
     <watches-manager />
@@ -207,19 +229,77 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/PersonnagesManager.php">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="578">
+          <caret line="34" column="45" lean-forward="false" selection-start-line="34" selection-start-column="45" selection-end-line="34" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tpJeuCombat.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="23" column="37" lean-forward="true" selection-start-line="23" selection-start-column="37" selection-end-line="23" selection-end-column="37" />
+          <folding>
+            <marker date="1519720396665" expanded="true" signature="2990:3001" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PersonnageTp.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="32" lean-forward="false" selection-start-line="13" selection-start-column="32" selection-end-line="13" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Compteur.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test03.php">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tpJeuCombat.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="23" column="37" lean-forward="false" selection-start-line="23" selection-start-column="37" selection-end-line="23" selection-end-column="37" />
           <folding>
-            <marker date="1519603900903" expanded="true" signature="317:403" ph="INSERT INTO personnagestp... " />
-            <marker date="1519603900903" expanded="true" signature="999:1038" ph="SELECT id, n... personnagestp" />
-            <marker date="1519603900903" expanded="true" signature="1204:1248" ph="SELECT id, n... personnagestp" />
-            <marker date="1519603900903" expanded="true" signature="1476:1534" ph="SELECT id, n... personnagestp" />
-            <marker date="1519603900903" expanded="true" signature="1817:2019" ph="UPDATE personnagestp... " />
-            <marker date="1519603900903" expanded="true" signature="2697:2734" ph="DELETE FROM personnagestp... " />
-            <marker date="1519603900903" expanded="true" signature="2831:2865" ph="SELECT COUNT... personnagestp" />
-            <marker date="1519603900903" expanded="true" signature="3006:3052" ph="SELECT COUNT... personnagestp" />
-            <marker date="1519603900903" expanded="true" signature="3114:3165" ph="SELECT COUNT... personnagestp" />
+            <marker date="1519720396665" expanded="true" signature="2990:3001" ph="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PersonnagesManager.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="34" column="45" lean-forward="false" selection-start-line="34" selection-start-column="45" selection-end-line="34" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PersonnageTp.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="33" lean-forward="false" selection-start-line="13" selection-start-column="33" selection-end-line="13" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PersonnagesManager.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -236,7 +316,7 @@
         <state relative-caret-position="2125">
           <caret line="125" column="23" lean-forward="true" selection-start-line="125" selection-start-column="23" selection-end-line="125" selection-end-column="23" />
           <folding>
-            <marker date="1519602293786" expanded="true" signature="2990:3001" ph="..." />
+            <marker date="1519720396665" expanded="true" signature="2990:3001" ph="..." />
           </folding>
         </state>
       </provider>
@@ -245,17 +325,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1519603900903" expanded="true" signature="317:403" ph="INSERT INTO personnagestp... " />
-            <marker date="1519603900903" expanded="true" signature="999:1038" ph="SELECT id, n... personnagestp" />
-            <marker date="1519603900903" expanded="true" signature="1204:1248" ph="SELECT id, n... personnagestp" />
-            <marker date="1519603900903" expanded="true" signature="1476:1534" ph="SELECT id, n... personnagestp" />
-            <marker date="1519603900903" expanded="true" signature="1817:2019" ph="UPDATE personnagestp... " />
-            <marker date="1519603900903" expanded="true" signature="2697:2734" ph="DELETE FROM personnagestp... " />
-            <marker date="1519603900903" expanded="true" signature="2831:2865" ph="SELECT COUNT... personnagestp" />
-            <marker date="1519603900903" expanded="true" signature="3006:3052" ph="SELECT COUNT... personnagestp" />
-            <marker date="1519603900903" expanded="true" signature="3114:3165" ph="SELECT COUNT... personnagestp" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -272,7 +342,7 @@
         <state relative-caret-position="1071">
           <caret line="63" column="74" lean-forward="false" selection-start-line="63" selection-start-column="74" selection-end-line="63" selection-end-column="74" />
           <folding>
-            <marker date="1519602293786" expanded="true" signature="2990:3001" ph="..." />
+            <marker date="1519720396665" expanded="true" signature="2990:3001" ph="..." />
           </folding>
         </state>
       </provider>
@@ -291,39 +361,48 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/PersonnagesManager.php">
+    <entry file="file://$PROJECT_DIR$/poophp.sql">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-444">
-          <caret line="37" column="32" lean-forward="false" selection-start-line="37" selection-start-column="32" selection-end-line="37" selection-end-column="32" />
-          <folding>
-            <marker date="1519603900903" expanded="true" signature="317:403" ph="INSERT INTO personnagestp... " />
-            <marker date="1519603900903" expanded="true" signature="999:1038" ph="SELECT id, n... personnagestp" />
-            <marker date="1519603900903" expanded="true" signature="1204:1248" ph="SELECT id, n... personnagestp" />
-            <marker date="1519603900903" expanded="true" signature="1476:1534" ph="SELECT id, n... personnagestp" />
-            <marker date="1519603900903" expanded="true" signature="1817:2019" ph="UPDATE personnagestp... " />
-            <marker date="1519603900903" expanded="true" signature="2697:2734" ph="DELETE FROM personnagestp... " />
-            <marker date="1519603900903" expanded="true" signature="2831:2865" ph="SELECT COUNT... personnagestp" />
-            <marker date="1519603900903" expanded="true" signature="3006:3052" ph="SELECT COUNT... personnagestp" />
-            <marker date="1519603900903" expanded="true" signature="3114:3165" ph="SELECT COUNT... personnagestp" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PersonnageTp.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="35" lean-forward="false" selection-start-line="18" selection-start-column="35" selection-end-line="18" selection-end-column="35" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/tpJeuCombat.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1279">
-          <caret line="127" column="55" lean-forward="false" selection-start-line="127" selection-start-column="55" selection-end-line="127" selection-end-column="55" />
+        <state relative-caret-position="510">
+          <caret line="30" column="53" lean-forward="false" selection-start-line="30" selection-start-column="53" selection-end-line="30" selection-end-column="53" />
           <folding>
-            <marker date="1519602293786" expanded="true" signature="2990:3001" ph="..." />
+            <marker date="1519720396665" expanded="true" signature="2990:3001" ph="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PersonnagesManager.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1547">
+          <caret line="109" column="98" lean-forward="true" selection-start-line="109" selection-start-column="98" selection-end-line="109" selection-end-column="98" />
+          <folding>
+            <marker date="1519730058291" expanded="true" signature="394:482" ph="INSERT INTO personnagestp... " />
+            <marker date="1519730058291" expanded="true" signature="1056:1095" ph="SELECT * FRO... personnagestp" />
+            <marker date="1519730058291" expanded="true" signature="1163:1207" ph="SELECT * FRO... personnagestp" />
+            <marker date="1519730058291" expanded="true" signature="1930:2066" ph="UPDATE personnagestp... " />
+            <marker date="1519730058291" expanded="true" signature="2560:2618" ph="SELECT * FRO... personnagestp" />
+            <marker date="1519730058291" expanded="true" signature="2901:3151" ph="UPDATE personnagestp... " />
+            <marker date="1519730058291" expanded="true" signature="3913:3950" ph="DELETE FROM personnagestp... " />
+            <marker date="1519730058291" expanded="true" signature="4047:4081" ph="SELECT COUNT... personnagestp" />
+            <marker date="1519730058291" expanded="true" signature="4222:4268" ph="SELECT COUNT... personnagestp" />
+            <marker date="1519730058291" expanded="true" signature="4330:4381" ph="SELECT COUNT... personnagestp" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PersonnageTp.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="646">
+          <caret line="59" column="53" lean-forward="false" selection-start-line="59" selection-start-column="53" selection-end-line="59" selection-end-column="53" />
+          <folding />
         </state>
       </provider>
     </entry>

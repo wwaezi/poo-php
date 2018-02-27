@@ -13,16 +13,18 @@ class PersonnageTp
     private $_puissance;
     private $_nbCoupsPortes;
     private $_dateDernierCoupPorte;
+    private $_dateDerniereConnexion;
 
     /*******CONSTANTES***********/
 
 	const LIMIT_COUPS_PORTES    = 3;
+	const RECUPERATION_DEGATS   = 10;
 
 	const CEST_MOI              = 1;
 	const PERSONNAGE_TUE        = 2;
 	const PERSONNAGE_FRAPPE     = 4;
 
-     /*******CONSTRUCTEUR***********/
+	/*******CONSTRUCTEUR***********/
 
 	function __construct(array $donnees)
 	{
@@ -45,14 +47,17 @@ class PersonnageTp
 		if ($persoAFrapper->getId() != $this->_id) {
 
             $now = new DateTime('NOW');
+            $today = $now->format('Y-m-d');
 
-            if ($this->getDateDernierCoupPorte()->format('Y-m-d') < $now->format('Y-m-d')) {
-                $this->_nbCoupsPortes = 0;
+            if ($this->getDateDernierCoupPorte() != NULL) {
+                if ($this->getDateDernierCoupPorte() < $today) {
+                    $this->_nbCoupsPortes = 0;
+                }
             }
 
             if ($this->_nbCoupsPortes < self::LIMIT_COUPS_PORTES) {
                 $this->_nbCoupsPortes++;
-                $this->_dateDernierCoupPorte = $now;
+                $this->_dateDernierCoupPorte = $today;
                 $this->gagnerExperience();
                 return $persoAFrapper->recevoirDegats($this);
             }
@@ -68,9 +73,9 @@ class PersonnageTp
         $this->setExperience($this->_experience + 40);
 
         if ($this->_experience == 100 && $this->_niveau < 100) {
-                $this->setNiveau( $this->_niveau + 1);
-                $this->setExperience(0);
-                $this->setPuissance($this->_puissance + 1);
+            $this->setNiveau( $this->_niveau + 1);
+            $this->setExperience(0);
+            $this->setPuissance($this->_puissance + 1);
         }
 	}
 
@@ -103,19 +108,18 @@ class PersonnageTp
 	public function getPuissance() { return $this->_puissance; }
 	public function getNbCoupsPortes() { return $this->_nbCoupsPortes; }
 	public function getDateDernierCoupPorte() { return $this->_dateDernierCoupPorte; }
+	public function getDateDerniereConnexion() { return $this->_dateDerniereConnexion; }
 
     /*******SETTERS***********/
 
+    public function setDateDerniereConnexion($dateDerniereConnexion)
+    {
+        $this->_dateDerniereConnexion = $dateDerniereConnexion;
+    }
+
     public function setDateDernierCoupPorte($dateDernierCoupPorte)
     {
-        $dateDernierCoupPorte = DateTime::createFromFormat("Y-m-d", $dateDernierCoupPorte);
         $this->_dateDernierCoupPorte = $dateDernierCoupPorte;
-
-        $now = new DateTime('NOW');
-
-        if ($dateDernierCoupPorte->format('Y-m-d') < $now->format('Y-m-d')) {
-            $this->_nbCoupsPortes = 0;
-        }
     }
 
     public function setNbCoupsPortes($nbCoupsPortes)
@@ -124,14 +128,6 @@ class PersonnageTp
 
         if ($nbCoupsPortes < 0)
             $nbCoupsPortes = 0;
-
-        $now = new DateTime('NOW');
-
-        if ($this->_dateDernierCoupPorte != null) {
-            if ($this->_dateDernierCoupPorte->format('Y-m-d') < $now->format('Y-m-d')) {
-                $nbCoupsPortes = 0;
-            }
-        }
 
         $this->_nbCoupsPortes = $nbCoupsPortes;
     }
@@ -193,8 +189,13 @@ class PersonnageTp
     {
     	$degats = (int) $degats;
 
-    	if ($degats >= 0 && $degats <= 100)
-    		$this->_degats = $degats;
+    	if ($degats < 0)
+    	    $degats = 0;
+
+    	if ($degats > 100)
+    	    $degats = 100;
+
+    	$this->_degats = $degats;
     }
 
 }
