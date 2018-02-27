@@ -18,15 +18,15 @@ class PersonnagesManager
 
     public function add(PersonnageTp $perso)
     {
-        $q = $this->_db->prepare('INSERT INTO personnagestp(nom,dateDernierCoupPorte) VALUES(:nom,:dateDernierCoupPorte)');
-
         $now = new DateTime('NOW');
+        $today = $now->format('Y-m-d');
+
+        $q = $this->_db->prepare('INSERT INTO personnagestp(nom,dateDerniereConnexion) VALUES(:nom,:dateDerniereConnexion)');
 
         $q->bindValue(':nom', $perso->getNom());
-        $q->bindValue(':dateDernierCoupPorte', $now->format('Y-m-d'));
+        $q->bindValue(':dateDerniereConnexion', $today);
 
         $q->execute();
-
 
         $perso->hydrate([
             'id' => $this->_db->lastInsertId(),
@@ -34,7 +34,8 @@ class PersonnagesManager
             'niveau' => 1,
             'experience' => 0,
             'puissance' => 5,
-            'dateDernierCoupPorte' => $now->format('Y-m-d'),
+            'dateDernierCoupPorte' => NULL,
+            'dateDerniereConnexion' => $today,
             'nbCoupsPortes' => 0
         ]);
     }
@@ -43,13 +44,43 @@ class PersonnagesManager
     {
         if (is_numeric($info)) {
             $q = $this->_db->query('SELECT * FROM personnagestp WHERE id = ' . $info);
-            $donnees = $q->fetch(PDO::FETCH_ASSOC);
-            return new PersonnageTp($donnees);
+
         } else {
             $q = $this->_db->prepare('SELECT * FROM personnagestp WHERE nom = :nom');
             $q->execute([':nom' => $info]);
-            return new PersonnageTp($q->fetch(PDO::FETCH_ASSOC));
         }
+
+        $donnees = $q->fetch(PDO::FETCH_ASSOC);
+
+        $update = false;
+
+        $now = new DateTime('NOW');
+        $today = $now->format('Y-m-d');
+
+        if ($donnees['dateDernierCoupPorte'] != NULL)
+        {
+            if ($donnees['dateDernierCoupPorte'] < $today) {
+                $donnees['nbCoupsPortes'] = 0;
+                $update = true;
+            }
+        }
+
+        if ($donnees['dateDerniereConnexion'] < $today) {
+            $donnees['degats'] -= PersonnageTp::RECUPERATION_DEGATS;
+            $donnees['dateDerniereConnexion'] = $today;
+            $update = true;
+        }
+
+        if ($update) {
+            $q = $this->_db->prepare('UPDATE personnagestp SET dateDerniereConnexion = :dateDerniereConnexion, degats = :degats, nbCoupsPortes = :nbCoupsPortes WHERE id = :id');
+            $q->bindValue(':id', $donnees['id'], PDO::PARAM_INT);
+            $q->bindValue(':dateDerniereConnexion', $today, PDO::PARAM_INT);
+            $q->bindValue(':degats', $donnees['degats'], PDO::PARAM_INT);
+            $q->bindValue(':nbCoupsPortes', $donnees['nbCoupsPortes'], PDO::PARAM_INT);
+            $q->execute();
+        }
+
+        return new PersonnageTp($donnees);
     }
 
     public function getList($nom)
@@ -68,7 +99,7 @@ class PersonnagesManager
 
     public function update(PersonnageTp $perso)
     {
-        $q = $this->_db->prepare('UPDATE personnagestp SET degats = :degats, niveau = :niveau, experience = :experience, puissance = :puissance, nbCoupsPortes = :nbCoupsPortes, dateDernierCoupPorte = :dateDernierCoupPorte WHERE id = :id');
+        $q = $this->_db->prepare('UPDATE personnagestp SET degats = :degats, niveau = :niveau, experience = :experience, puissance = :puissance, nbCoupsPortes = :nbCoupsPortes, dateDernierCoupPorte = :dateDernierCoupPorte, dateDerniereConnexion = :dateDerniereConnexion WHERE id = :id');
 
         $q->bindValue(':degats', $perso->getDegats(), PDO::PARAM_INT);
         $q->bindValue(':id', $perso->getId(), PDO::PARAM_INT);
@@ -76,7 +107,8 @@ class PersonnagesManager
         $q->bindValue(':experience', $perso->getExperience(), PDO::PARAM_INT);
         $q->bindValue(':puissance', $perso->getPuissance(), PDO::PARAM_INT);
         $q->bindValue(':nbCoupsPortes', $perso->getNbCoupsPortes(), PDO::PARAM_INT);
-        $q->bindValue(':dateDernierCoupPorte', $perso->getDateDernierCoupPorte()->format('Y-m-d'), PDO::PARAM_INT);
+        $q->bindValue(':dateDernierCoupPorte', $perso->getDateDernierCoupPorte(), PDO::PARAM_STR);
+        $q->bindValue(':dateDerniereConnexion', $perso->getDateDerniereConnexion(), PDO::PARAM_STR);
 
         $q->execute();
     }
