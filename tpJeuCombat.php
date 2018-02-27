@@ -7,6 +7,20 @@ function chargerClasse($classe)
 
 spl_autoload_register('chargerClasse'); // On enregistre la fonction en autoload pour qu'elle soit appelée dès qu'on instanciera une classe non déclarée.
 
+session_start(); // On appelle session_start() APRÈS avoir enregistré l'autoload.
+
+if (isset($_GET['deconnexion']))
+{
+    session_destroy();
+    header('Location: http://localhost/poo-php/tpJeuCombat.php');
+    exit();
+}
+
+if (isset($_SESSION['perso'])) // Si la session perso existe, on restaure l'objet.
+{
+    $perso = $_SESSION['perso'];
+}
+
 $db = new PDO('mysql:host=localhost;dbname=poophp;charset=utf8', 'root', '');
 $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING); // On émet une alerte à chaque fois qu'une requête a échoué.
 
@@ -42,12 +56,7 @@ elseif (isset($_POST['nom']) && isset($_POST['utiliser']))
     }
 }
 
-if (!isset($perso) && isset($_GET['idPersoQuiFrappe'])) {
-    if ($manager->exists($_GET['idPersoQuiFrappe']))
-        $perso = $manager->get($_GET['idPersoQuiFrappe']);
-}
-
-if (isset($_GET['idPersoAFrapper']) && !empty($_GET['idPersoAFrapper']))
+if (isset($_GET['idPersoAFrapper']) && !empty($_GET['idPersoAFrapper']) && isset($perso))
 {
     $idPersoAFrapper = $_GET['idPersoAFrapper'];
 
@@ -56,15 +65,20 @@ if (isset($_GET['idPersoAFrapper']) && !empty($_GET['idPersoAFrapper']))
         switch ($perso->frapper($persoAFrapper))
         {
             case PersonnageTp::PERSONNAGE_FRAPPE:
+                $manager->update($perso);
                 $manager->update($persoAFrapper);
                 $message = "Tu viens de frapper ".$persoAFrapper->getNom().".";
                 break;
             case PersonnageTp::PERSONNAGE_TUE:
                 $manager->delete($persoAFrapper);
+                $manager->update($perso);
                 $message = "Tu viens de tuer ".$persoAFrapper->getNom().".";
                 break;
             case PersonnageTp::CEST_MOI:
                 $message = "Tu ne peux pas te frapper toi-même.";
+                break;
+            case PersonnageTp::LIMIT_COUPS_PORTES:
+                $message = "Tu as suffisament frappé pour aujourd'hui.";
                 break;
         }
     }
@@ -93,7 +107,7 @@ $nbDePerso = $manager->count();
 
             <form action="" method="post">
                 <p>
-                    Nom : <input type="text" name="nom" maxlength="50" />
+                    Nom : <input type="text" name="nom" maxlength="50" value="<?php if (isset($_POST['nom'])) echo $_POST['nom']; ?>"/>
                     <input type="submit" value="Créer ce personnage" name="creer" />
                     <input type="submit" value="Utiliser ce personnage" name="utiliser" />
                 </p>
@@ -101,12 +115,18 @@ $nbDePerso = $manager->count();
 
         <?php else: ?>
 
-            <p><a href="http://localhost/poo-php/tpJeuCombat.php">Se déconnecter</a></p>
+            <p><a href="?deconnexion=1">Se déconnecter</a></p>
 
             <fieldset>
                 <legend>Mes informations :</legend>
-                <p>Nom : <?= htmlspecialchars($perso->getNom()) ?></p>
-                <p>Dégâts : <?= htmlspecialchars($perso->getDegats()) ?></p>
+                <p>
+                    Nom : <?= htmlspecialchars($perso->getNom()) ?><br/>
+                    Dégâts : <?= htmlspecialchars($perso->getDegats()) ?><br/>
+                    Niveau : <?= htmlspecialchars($perso->getNiveau()) ?><br/>
+                    Experience : <?= htmlspecialchars($perso->getExperience()) ?><br/>
+                    Puissance : <?= htmlspecialchars($perso->getPuissance()) ?><br/>
+                    Nombre de coups portés aujourd'hui : <?= htmlspecialchars($perso->getNbCoupsPortes()) ?>
+                </p>
             </fieldset>
 
 
@@ -121,7 +141,7 @@ $nbDePerso = $manager->count();
                     <?php foreach ($manager->getList($perso->getNom()) as $value): ?>
                         <table style="margin-left: 20px;">
                             <tr>
-                                <td><a href="?idPersoQuiFrappe=<?= $perso->getId() ?>&idPersoAFrapper=<?= $value->getId() ?>"><?= htmlspecialchars($value->getNom()) ?></a> (dégâts : <?= $value->getDegats() ?>)</td>
+                                <td><a href="?idPersoAFrapper=<?= $value->getId() ?>"><?= htmlspecialchars($value->getNom()) ?></a> (dégâts : <?= $value->getDegats() ?>)</td>
                             </tr>
                         </table>
                     <?php endforeach; ?>
@@ -137,3 +157,8 @@ $nbDePerso = $manager->count();
         <?php endif; ?>
     </body>
 </html>
+<?php
+if (isset($perso)) // Si on a créé un personnage, on le stocke dans une variable session afin d'économiser une requête SQL.
+{
+    $_SESSION['perso'] = $perso;
+}
